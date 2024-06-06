@@ -27,12 +27,12 @@ async def read_root():
 
 # Define the input data model with validation
 class InputData(BaseModel):
-    attempts: float = Field(..., ge=0)  # Ensure attempts is >= -1
+    attempts: float = Field(..., ge=0)  # Ensure attempts is >= 0
     score_rate: float = Field(..., ge=-1, le=1)  # Ensure score_rate is between 0 and 1
     teacher_rank: float = Field(..., ge=1, le=5)  # Ensure teacher_rank is between 1 and 5
     school_rank: float = Field(..., ge=1, le=5)  # Ensure school_rank is between 1 and 5
     users_school_rank: float = Field(..., ge=1, le=5)  # Ensure users_school_rank is between 1 and 5
-    sentiment: float = Field(..., ge=0, le=5)  # Ensure sentiment is between 1 and 5
+    sentiment: float = Field(..., ge=0, le=5)  # Ensure sentiment is between 0 and 5
     num_of_user: float = Field(..., ge=0)  # Ensure num_of_user is >= 0
 
 # Define mapping for prediction labels
